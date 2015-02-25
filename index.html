@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>MTGO Vanguard Generator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.4/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="main.ctrl.js"></script>
+</head>
+<body ng-app="app" ng-controller="MainController as main">
+	<div class="container">
+		<h1>Momir generator</h1>
+		<div class="col-xs-2">
+			<h4><a href="jhoira.html">Jhoira Generator</a></h4>
+		</div>
+		<div class="col-xs-2">
+			<h4><a href="lifecounter/counters.html">Life Counters</a></h4>
+		</div>
+		<div class="clearfix"></div>
+		<div class="button-group-justified" role="group">
+			<button type="button" class="btn btn-default" ng-click="cardCreature = main.doClickCreature(0)">0</button>
+			<button type="button" class="btn btn-default" ng-click="cardCreature = main.doClickCreature(1)">1</button>
+			<button type="button" class="btn btn-default" ng-click="cardCreature = main.doClickCreature(2)">2</button>
+			<button type="button" class="btn btn-default" ng-click="cardCreature = main.doClickCreature(3)">3</button>
+			<button type="button" class="btn btn-default" ng-click="cardCreature = main.doClickCreature(4)">4</button>
+			<button type="button" class="btn btn-default" ng-click="cardCreature = main.doClickCreature(5)">5</button>
+			<button type="button" class="btn btn-default" ng-click="cardCreature = main.doClickCreature(6)">6</button>
+			<button type="button" class="btn btn-default" ng-click="cardCreature = main.doClickCreature(7)">7</button>
+			<button type="button" class="btn btn-default" ng-click="cardCreature = main.doClickCreature(8)">8</button>
+			<button type="button" class="btn btn-default" ng-click="cardCreature = main.doClickCreature(9)">9</button>
+			<button type="button" class="btn btn-default" ng-click="cardCreature = main.doClickCreature(10)">10</button>
+			<button type="button" class="btn btn-default" ng-click="cardCreature = main.doClickCreature(11)">11</button>
+			<button type="button" class="btn btn-default" ng-click="cardCreature = main.doClickCreature(12)">12</button>
+			<button type="button" class="btn btn-default" ng-click="cardCreature = main.doClickCreature(15)">15</button>
+			<button type="button" class="btn btn-default" ng-click="cardCreature = main.doClickCreature(16)">16</button>
+		</div>
+		<div class="clearfix"></div>
+		
+		<div class="container">
+		{{cardCreature.name}}<br />
+		{{cardCreature.text}}<br />
+		<span ng-if="cardCreature.power != undefined && cardCreature.toughness != undefined">{{cardCreature.power}}/{{cardCreature.toughness}}</span>
+		</div>
+		<hr />
+		<div class="container" style="font-size: 0.7em">
+			<h2>Latest Ten Creatures</h2>
+			<div class="col-xs-22" ng-repeat="card in main.cardList">
+				{{card.name}}<br />
+				{{card.text}}<br />
+				<span ng-if="card.power != undefined && card.toughness != undefined">{{card.power}}/{{card.toughness}}</span>
+				<hr />
+			</div>
+		</div>
+	</div>
+
+</body>
+</script>

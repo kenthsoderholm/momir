@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>MTGO Vanguard Generator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.4/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="counters.ctrl.js"></script>
+</head>
+<body ng-app="app" ng-controller="MainController as main">
+	<div class="container">
+		<h1>Life Totals</h1>
+		<div class="col-xs-2">
+			<h4><a href="../index.html">Momir Generator</a></h4>
+		</div>
+		<div class="col-xs-2">
+			<h4><a href="../jhoira.html">Jhoira Generator</a></h4>
+		</div>
+		<div class="clearfix"></div>
+		<div class="col-xs-6 pull-left">
+			<h2>Player 1</h2>
+			<br />
+			<button type="button" class="btn btn-default btn-lg" ng-click="main.playerOne = main.playerOne - 5">-5</button>
+			<button type="button" class="btn btn-default btn-lg" ng-click="main.playerOne = main.playerOne - 1">-1</button>
+			<button type="button" class="btn btn-default btn-lg" ng-click="main.playerOne = main.playerOne + 1">+1</button>
+			<button type="button" class="btn btn-default btn-lg" ng-click="main.playerOne = main.playerOne + 5">+5</button>
+			<h2>{{main.playerOne}}</h2>
+			<h3>Poison Counters</h3>
+			<h3>{{main.playerOnePoison}}</h3>
+			<button type="button" class="btn btn-default btn-lg" ng-click="main.playerOnePoison = main.playerOnePoison - 1">-1</button>
+			<button type="button" class="btn btn-default btn-lg" ng-click="main.playerOnePoison = main.playerOnePoison + 1">+1</button>
+		</div>
+		<div class="col-xs-6 pull-right">
+			<h2>Player 2</h2>
+			<br />
+			<button type="button" class="btn btn-default btn-lg" ng-click="main.playerTwo = main.playerTwo - 5">-5</button>
+			<button type="button" class="btn btn-default btn-lg" ng-click="main.playerTwo = main.playerTwo - 1">-1</button>
+			<button type="button" class="btn btn-default btn-lg" ng-click="main.playerTwo = main.playerTwo + 1">+1</button>
+			<button type="button" class="btn btn-default btn-lg" ng-click="main.playerTwo = main.playerTwo + 5">+5</button>
+			<h2>{{main.playerTwo}}</h2>
+			<h3>Poison Counters</h3>
+			<h3>{{main.playerTwoPoison}}</h3>
+			<button type="button" class="btn btn-default btn-lg" ng-click="main.playerTwoPoison = main.playerTwoPoison - 1">-1</button>
+			<button type="button" class="btn btn-default btn-lg" ng-click="main.playerTwoPoison = main.playerTwoPoison + 1">+1</button>
+		</div>
+	</div>
+</body>
+</html>
