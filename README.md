@@ -2,3 +2,5 @@
 Toying with Angular JS
 
 I am a MTG player and wanted to fiddle with Angular JS, so I started on this little Momir Vig generator for Momir Basic.
+
+Also added a simple lifecounter (and poison) and Jhoira gen.
